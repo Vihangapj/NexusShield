@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  NEXUS SHIELD — Cyber Defense Solutions                  ║
+  ║  Page: About (about.html)                                ║
+  ║  Description: Company story, team, timeline, values.     ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — NexusShield</title>
+  <meta name="description" content="Learn about NexusShield's founding story, mission, and the team behind elite cyber defense.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { 'void':'#030508','deep':'#070c12','card':'#0b1220','cyan':'#00ffc8','alert':'#ff2d55','amber':'#ffb700' },
+          fontFamily: { display:['Syne','sans-serif'], mono:['JetBrains Mono','monospace'], serif:['Crimson Pro','serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    /* Timeline styles */
+    .timeline { position: relative; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 24px; top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--cyan), transparent);
+    }
+    .timeline-item { padding-left: 64px; position: relative; margin-bottom: 48px; }
+    .timeline-dot {
+      position: absolute;
+      left: 16px; top: 4px;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--bg-void);
+      border: 2px solid var(--cyan);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .timeline-dot::after {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+    }
+    /* Team card audio trigger */
+    .team-card:hover .team-role { color: var(--cyan); }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body class="bg-void">
+
+
+  <nav>
+    <a href="../index.html" class="logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 36 36" fill="none"><path d="M18 2L4 8v10c0 8.284 6.048 15.396 14 17 7.952-1.604 14-8.716 14-17V8L18 2z" stroke="#00ffc8" stroke-width="1.5" fill="none"/><circle cx="18" cy="17" r="4" fill="rgba(0,255,200,0.15)" stroke="#00ffc8" stroke-width="1"/><path d="M14 17l3 3 5-6" stroke="#00ffc8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="logo-text">Nexus<span>Shield</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="threat-intel.html">Threat Intel</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="sitemap.html">Sitemap</a></li>
+    </ul>
+    <a href="contact.html" class="btn-cta">Get Protected</a>
+    <button class="menu-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative pt-40 pb-20 overflow-hidden">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 70% 50% at 20% 60%, rgba(0,255,200,0.05) 0%, transparent 60%);"></div>
+    <div class="container relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div>
+          <div class="section-label">Our Story</div>
+          <h1 class="font-display font-extrabold leading-none mb-6" style="font-size: clamp(2.5rem,6vw,4rem);">
+            Born from the<br><span style="color: var(--cyan);">Intelligence World</span>
+          </h1>
+          <p style="font-family: var(--font-serif); font-size: 1.1rem; color: var(--text-secondary); line-height: 1.9; font-style: italic; margin-bottom: 24px;">
+            NexusShield was founded in 2018 by a team of Sri Lankan cyber defenders from Colombo, Kandy, and Galle who saw a gap: enterprises had digital risk, but not enough local security expertise.
+          </p>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.9;">
+            We bridged that gap — bringing intelligence-grade defense to the private sector. Today, NexusShield protects 3,400+ organizations across 47 countries, processing 4 trillion threat signals daily.
+          </p>
+        </div>
+        <!-- SVG Illustration: Globe with shield -->
+        <div class="flex items-center justify-center">
+          <svg viewBox="0 0 400 400" width="360" height="360" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Globe with shield protection illustration">
+            <!-- Outer circle -->
+            <circle cx="200" cy="200" r="160" stroke="rgba(0,255,200,0.1)" stroke-width="1" stroke-dasharray="8 6"/>
+            <circle cx="200" cy="200" r="120" stroke="rgba(0,255,200,0.08)" stroke-width="1"/>
+            <circle cx="200" cy="200" r="80"  stroke="rgba(0,255,200,0.12)" stroke-width="1.5"/>
+            <!-- Meridians -->
+            <ellipse cx="200" cy="200" rx="120" ry="40" stroke="rgba(0,255,200,0.07)" stroke-width="1"/>
+            <line x1="200" y1="80" x2="200" y2="320" stroke="rgba(0,255,200,0.07)" stroke-width="1"/>
+            <line x1="80"  y1="200" x2="320" y2="200" stroke="rgba(0,255,200,0.07)" stroke-width="1"/>
+            <!-- Glowing dots (nodes) -->
+            <circle cx="140" cy="160" r="4" fill="#00ffc8" fill-opacity="0.8"/>
+            <circle cx="260" cy="150" r="3" fill="#00ffc8" fill-opacity="0.6"/>
+            <circle cx="200" cy="240" r="4" fill="#00ffc8" fill-opacity="0.8"/>
+            <circle cx="290" cy="220" r="3" fill="#00ffc8" fill-opacity="0.5"/>
+            <circle cx="120" cy="230" r="3" fill="#00ffc8" fill-opacity="0.5"/>
+            <!-- Connection lines -->
+            <line x1="140" y1="160" x2="260" y2="150" stroke="rgba(0,255,200,0.25)" stroke-width="0.8"/>
+            <line x1="140" y1="160" x2="200" y2="240" stroke="rgba(0,255,200,0.25)" stroke-width="0.8"/>
+            <line x1="260" y1="150" x2="290" y2="220" stroke="rgba(0,255,200,0.2)" stroke-width="0.8"/>
+            <line x1="200" y1="240" x2="120" y2="230" stroke="rgba(0,255,200,0.2)" stroke-width="0.8"/>
+            <line x1="200" y1="240" x2="290" y2="220" stroke="rgba(0,255,200,0.15)" stroke-width="0.8"/>
+            <!-- Center Shield -->
+            <path d="M200 178l-16 7v11c0 8.3 6.8 14.5 16 16.3 9.2-1.8 16-8 16-16.3v-11z" fill="rgba(0,255,200,0.15)" stroke="#00ffc8" stroke-width="1.5"/>
+            <path d="M196 196l3 3 5-6" stroke="#00ffc8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Threat indicators (red) -->
+            <circle cx="310" cy="140" r="5" fill="#ff2d55" fill-opacity="0.8"><animate attributeName="r" values="5;8;5" dur="2s" repeatCount="indefinite"/><animate attributeName="fill-opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite"/></circle>
+            <circle cx="100" cy="280" r="4" fill="#ff2d55" fill-opacity="0.7"><animate attributeName="r" values="4;7;4" dur="2.5s" repeatCount="indefinite"/><animate attributeName="fill-opacity" values="0.7;0.2;0.7" dur="2.5s" repeatCount="indefinite"/></circle>
+            <!-- Blocked lines to threats -->
+            <line x1="310" y1="140" x2="260" y2="150" stroke="rgba(255,45,85,0.3)" stroke-width="0.8" stroke-dasharray="4 3"/>
+            <line x1="100" y1="280" x2="120" y2="230" stroke="rgba(255,45,85,0.3)" stroke-width="0.8" stroke-dasharray="4 3"/>
+            <!-- Block X markers -->
+            <text x="286" y="148" fill="#ff2d55" font-size="10" font-family="monospace" opacity="0.8">✗</text>
+            <text x="108" y="258" fill="#ff2d55" font-size="10" font-family="monospace" opacity="0.8">✗</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="py-20" style="background: var(--bg-deep); border-top: 1px solid var(--border-dim);">
+    <div class="container">
+      <div class="section-label" style="justify-content:center; margin-bottom: 48px;">Core Values</div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="card fade-up text-center">
+          <div style="font-size:2rem; margin-bottom:12px;">⚡</div>
+          <h4 class="font-display font-bold mb-2" style="color:var(--text-primary);">Speed</h4>
+          <p style="font-size:0.75rem; color:var(--text-secondary); line-height:1.7;">Threats don't wait. Neither do we. 12-minute MTTR.</p>
+        </div>
+        <div class="card fade-up text-center">
+          <div style="font-size:2rem; margin-bottom:12px;">🎯</div>
+          <h4 class="font-display font-bold mb-2" style="color:var(--text-primary);">Precision</h4>
+          <p style="font-size:0.75rem; color:var(--text-secondary); line-height:1.7;">99.97% detection. 0.03% noise. Signal over chaos.</p>
+        </div>
+        <div class="card fade-up text-center">
+          <div style="font-size:2rem; margin-bottom:12px;">🔒</div>
+          <h4 class="font-display font-bold mb-2" style="color:var(--text-primary);">Integrity</h4>
+          <p style="font-size:0.75rem; color:var(--text-secondary); line-height:1.7;">Your data stays yours. Zero telemetry sold. Ever.</p>
+        </div>
+        <div class="card fade-up text-center">
+          <div style="font-size:2rem; margin-bottom:12px;">🌍</div>
+          <h4 class="font-display font-bold mb-2" style="color:var(--text-primary);">Scale</h4>
+          <p style="font-size:0.75rem; color:var(--text-secondary); line-height:1.7;">From 10-person startups to Fortune 50 enterprises.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="py-24">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <div>
+          <div class="section-label">History</div>
+          <h2 class="section-heading">Six Years of<br><span class="accent">Relentless Growth</span></h2>
+          <p class="section-sub">From a 4-person startup in Colombo 03 to a 900-person regional defense firm.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot"></div>
+            <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--cyan); margin-bottom: 4px; letter-spacing:0.1em;">2018</div>
+            <h4 class="font-display font-semibold mb-1" style="color:var(--text-primary);">Founded in Colombo</h4>
+            <p style="font-size:0.8rem; color:var(--text-secondary); line-height:1.7;">4 co-founders, $2M seed round, first enterprise client onboarded within 30 days.</p>
+          </div>
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot"></div>
+            <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--cyan); margin-bottom: 4px; letter-spacing:0.1em;">2019</div>
+            <h4 class="font-display font-semibold mb-1" style="color:var(--text-primary);">NexusAI v1 Launched</h4>
+            <p style="font-size:0.8rem; color:var(--text-secondary); line-height:1.7;">First proprietary AI threat engine. 94% detection rate. $18M Series A closed.</p>
+          </div>
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot"></div>
+            <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--cyan); margin-bottom: 4px; letter-spacing:0.1em;">2021</div>
+            <h4 class="font-display font-semibold mb-1" style="color:var(--text-primary);">Global SOC Expansion</h4>
+            <p style="font-size:0.8rem; color:var(--text-secondary); line-height:1.7;">Opened SOC centers in Colombo, Kandy, Galle, and Jaffna. 500 clients milestone.</p>
+          </div>
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot"></div>
+            <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--cyan); margin-bottom: 4px; letter-spacing:0.1em;">2023</div>
+            <h4 class="font-display font-semibold mb-1" style="color:var(--text-primary);">NexusAI v7 — Industry First</h4>
+            <p style="font-size:0.8rem; color:var(--text-secondary); line-height:1.7;">99.97% detection accuracy. $120M Series C. Named Gartner Cool Vendor.</p>
+          </div>
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot"></div>
+            <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--cyan); margin-bottom: 4px; letter-spacing:0.1em;">2024</div>
+            <h4 class="font-display font-semibold mb-1" style="color:var(--text-primary);">3,400+ Clients. 47 Countries.</h4>
+            <p style="font-size:0.8rem; color:var(--text-secondary); line-height:1.7;">900 employees. Zero confirmed breaches in any protected client. Still counting.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="py-24" style="background: var(--bg-deep);">
+    <div class="container">
+      <div class="text-center mb-16">
+        <div class="section-label" style="justify-content:center;">Leadership</div>
+        <h2 class="section-heading text-center">The <span class="accent">Minds</span> Behind the Shield</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Team member cards (fictional) -->
+        <div class="team-card card fade-up text-center">
+          <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: var(--cyan-dim); border: 1px solid var(--border-glow); font-size:2rem;">👩‍💻</div>
+          <h4 class="font-display font-bold" style="color:var(--text-primary);">Anushka Perera</h4>
+          <div class="team-role mt-1 mb-3 transition-colors duration-300" style="font-family:var(--font-mono); font-size:0.62rem; letter-spacing:0.1em; color:var(--text-muted);">CEO & Co-Founder</div>
+          <p style="font-size:0.75rem; color:var(--text-secondary); line-height:1.7;">Colombo-based cyber strategist with 18 years in enterprise risk and incident response.</p>
+        </div>
+        <div class="team-card card fade-up text-center">
+          <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: var(--cyan-dim); border: 1px solid var(--border-glow); font-size:2rem;">👨‍🔬</div>
+          <h4 class="font-display font-bold" style="color:var(--text-primary);">Dr. Nuwan Jayasinghe</h4>
+          <div class="team-role mt-1 mb-3 transition-colors duration-300" style="font-family:var(--font-mono); font-size:0.62rem; letter-spacing:0.1em; color:var(--text-muted);">CTO & Co-Founder</div>
+          <p style="font-size:0.75rem; color:var(--text-secondary); line-height:1.7;">PhD in adversarial machine learning. Architect of NexusAI and secure cloud analytics.</p>
+        </div>
+        <div class="team-card card fade-up text-center">
+          <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: var(--cyan-dim); border: 1px solid var(--border-glow); font-size:2rem;">👩‍⚖️</div>
+          <h4 class="font-display font-bold" style="color:var(--text-primary);">Dilini Fernando</h4>
+          <div class="team-role mt-1 mb-3 transition-colors duration-300" style="font-family:var(--font-mono); font-size:0.62rem; letter-spacing:0.1em; color:var(--text-muted);">Chief Legal & Privacy Officer</div>
+          <p style="font-size:0.75rem; color:var(--text-secondary); line-height:1.7;">Privacy and compliance lead for Sri Lankan financial, healthcare, and education clients.</p>
+        </div>
+        <div class="team-card card fade-up text-center">
+          <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: var(--cyan-dim); border: 1px solid var(--border-glow); font-size:2rem;">👨‍💼</div>
+          <h4 class="font-display font-bold" style="color:var(--text-primary);">Kasun Wijesekara</h4>
+          <div class="team-role mt-1 mb-3 transition-colors duration-300" style="font-family:var(--font-mono); font-size:0.62rem; letter-spacing:0.1em; color:var(--text-muted);">VP of Threat Research</div>
+          <p style="font-size:0.75rem; color:var(--text-secondary); line-height:1.7;">18 years tracking APT groups. Discovered CVE-2021-44228 (Log4Shell) independently.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Audio -->
+  <section class="py-16">
+    <div class="container">
+      <div class="card max-w-2xl mx-auto" style="border-color: var(--border-glow);">
+        <div class="section-label mb-4">CEO Briefing</div>
+        <h3 class="font-display font-bold text-xl mb-3" style="color:var(--text-primary);">Listen: Anushka Perera on the Future of Cyber Defense</h3>
+        <p style="font-size:0.8rem; color:var(--text-secondary); margin-bottom: 20px; line-height:1.7;">A 4-minute audio briefing from our CEO on why traditional security models are failing enterprises in 2024.</p>
+        <div class="terminal" aria-label="CEO audio briefing transcript preview">
+          <div class="terminal-bar">
+            <div class="terminal-dot red"></div><div class="terminal-dot amber"></div><div class="terminal-dot green"></div>
+            <span class="terminal-title">briefing-transcript.txt</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="t-prompt">anushka@nexus</span>:~$ <span class="t-cmd">play briefing --summary</span></p>
+            <p class="mt-2">Traditional perimeter security is failing because the perimeter no longer exists. Defense now has to follow identity, behavior, and data wherever they move.</p>
+            <p class="mt-2"><span class="t-ok">[READY]</span> Full briefing asset can be added later at assets/briefing.mp3.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo"><div class="logo-mark"><svg viewBox="0 0 36 36" fill="none"><path d="M18 2L4 8v10c0 8.284 6.048 15.396 14 17 7.952-1.604 14-8.716 14-17V8L18 2z" stroke="#00ffc8" stroke-width="1.5" fill="none"/><circle cx="18" cy="17" r="4" fill="rgba(0,255,200,0.15)" stroke="#00ffc8" stroke-width="1"/><path d="M14 17l3 3 5-6" stroke="#00ffc8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="logo-text">Nexus<span>Shield</span></span></a>
+          <p>All entities depicted are fictional. Created for competition purposes.</p>
+        </div>
+        <div class="footer-col"><h4>Pages</h4><ul><li><a href="../index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="threat-intel.html">Threat Intel</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Company</h4><ul><li><a href="#">Careers</a></li><li><a href="#">Press</a></li><li><a href="#">Research</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:defense@nexusshield.lk">defense@nexusshield.lk</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 NexusShield Inc. — Fictional.</span><span style="color:var(--cyan);">Status: SECURE</span></div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  NEXUS SHIELD — Cyber Defense Solutions                  ║
+  ║  Page: Contact (contact.html)                            ║
+  ║  Description: Contact form, office locations, and FAQ.  ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — NexusShield</title>
+  <meta name="description" content="Contact NexusShield for cybersecurity consultations, enterprise sales, and incident response.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { 'void':'#030508','deep':'#070c12','card':'#0b1220','cyan':'#00ffc8','alert':'#ff2d55','amber':'#ffb700' },
+          fontFamily: { display:['Syne','sans-serif'], mono:['JetBrains Mono','monospace'], serif:['Crimson Pro','serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    /* Form styles */
+    .form-group { margin-bottom: 24px; }
+    .form-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      background: var(--bg-deep);
+      border: 1px solid var(--border-dim);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--text-muted); }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 2px rgba(0,255,200,0.1);
+    }
+    .form-select {  appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2300ffc8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; }
+    .form-textarea { min-height: 120px; resize: vertical; }
+
+    /* FAQ accordion */
+    .faq-item { border-bottom: 1px solid var(--border-dim); }
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 20px 0;
+      background: none;
+      border: none;
+      
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      transition: color var(--transition);
+    }
+    .faq-question:hover { color: var(--cyan); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 20px; }
+    .faq-icon { font-size: 1.2rem; color: var(--cyan); transition: transform 0.3s; flex-shrink:0; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    /* Success message */
+    #form-success {
+      display: none;
+      text-align: center;
+      padding: 48px;
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body class="bg-void">
+
+
+  <nav>
+    <a href="../index.html" class="logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 36 36" fill="none"><path d="M18 2L4 8v10c0 8.284 6.048 15.396 14 17 7.952-1.604 14-8.716 14-17V8L18 2z" stroke="#00ffc8" stroke-width="1.5" fill="none"/><circle cx="18" cy="17" r="4" fill="rgba(0,255,200,0.15)" stroke="#00ffc8" stroke-width="1"/><path d="M14 17l3 3 5-6" stroke="#00ffc8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="logo-text">Nexus<span>Shield</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="threat-intel.html">Threat Intel</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="sitemap.html">Sitemap</a></li>
+    </ul>
+    <a href="contact.html" class="btn-cta">Get Protected</a>
+    <button class="menu-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative pt-40 pb-16 overflow-hidden">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 50% at 80% 50%, rgba(0,255,200,0.05) 0%, transparent 60%);"></div>
+    <div class="container relative z-10">
+      <div class="section-label">Contact</div>
+      <h1 class="font-display font-extrabold leading-none mb-4" style="font-size: clamp(2.5rem,6vw,4rem);">
+        Let's Secure<br><span style="color: var(--cyan);">Your World</span>
+      </h1>
+      <p class="section-sub">Whether you need enterprise protection, incident response, or just want to understand your risk — our team responds within 2 hours.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="pb-24">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+
+        <!-- Contact Form -->
+        <div class="lg:col-span-3">
+          <div class="card">
+            <div class="section-label mb-6">Secure Inquiry Form</div>
+
+            <!-- Form -->
+            <form id="contact-form" novalidate>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="form-group">
+                  <label class="form-label" for="fname">First Name *</label>
+                  <input type="text" id="fname" name="fname" class="form-input" placeholder="John" required autocomplete="given-name">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="lname">Last Name *</label>
+                  <input type="text" id="lname" name="lname" class="form-input" placeholder="Doe" required autocomplete="family-name">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Work Email *</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="john@company.com" required autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="company">Company *</label>
+                <input type="text" id="company" name="company" class="form-input" placeholder="Acme Corp" required autocomplete="organization">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="service">Service of Interest</label>
+                <select id="service" name="service" class="form-select">
+                  <option value="" style="background:var(--bg-deep);">Select a service</option>
+                  <option value="ai" style="background:var(--bg-deep);">AI Threat Detection</option>
+                  <option value="zerotrust" style="background:var(--bg-deep);">Zero-Trust Architecture</option>
+                  <option value="soc" style="background:var(--bg-deep);">SOC as a Service</option>
+                  <option value="pentest" style="background:var(--bg-deep);">Penetration Testing</option>
+                  <option value="cloud" style="background:var(--bg-deep);">Cloud Security</option>
+                  <option value="incident" style="background:var(--bg-deep);">Incident Response</option>
+                  <option value="other" style="background:var(--bg-deep);">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="message">Message *</label>
+                <textarea id="message" name="message" class="form-textarea" placeholder="Describe your security needs or the incident you're experiencing..." required></textarea>
+              </div>
+              <div class="form-group flex items-start gap-3">
+                <input type="checkbox" id="urgent" name="urgent" style="margin-top:3px; accent-color:var(--cyan);">
+                <label for="urgent" style="font-size:0.75rem; color:var(--text-secondary); ">
+                  <span style="color:var(--red-alert); font-family:var(--font-mono);">🚨 URGENT:</span> I am currently experiencing a security incident and need immediate assistance.
+                </label>
+              </div>
+              <!-- Error message -->
+              <div id="form-error" style="display:none; color:var(--red-alert); font-family:var(--font-mono); font-size:0.72rem; margin-bottom:16px; padding:12px; border:1px solid rgba(255,45,85,0.3); border-radius:4px; background:rgba(255,45,85,0.08);"></div>
+              <button type="submit" class="btn-cta w-full text-center" style="padding:16px; font-size:0.8rem; display:block; clip-path:none; border-radius:4px;">
+                Send Secure Message →
+              </button>
+            </form>
+
+            <!-- Success state -->
+            <div id="form-success">
+              <div style="font-size:2.5rem; margin-bottom:16px;">✓</div>
+              <h3 class="font-display font-bold text-xl mb-3" style="color:var(--cyan);">Message Received</h3>
+              <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.8;">Our team will review your inquiry and respond within 2 hours. If you're experiencing an active incident, please call our emergency line.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Contact Info -->
+        <div class="lg:col-span-2 space-y-6">
+
+          <!-- Emergency -->
+          <div class="card" style="border-color: rgba(255,45,85,0.4); background: rgba(255,45,85,0.05);">
+            <div style="font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.2em; color:var(--red-alert); margin-bottom:8px;">🚨 EMERGENCY RESPONSE</div>
+            <h4 class="font-display font-bold text-lg mb-2" style="color:var(--text-primary);">Active Incident?</h4>
+            <p style="font-size:0.8rem; color:var(--text-secondary); margin-bottom:16px; line-height:1.7;">Our 24/7 incident response hotline connects you to a senior analyst in under 3 minutes.</p>
+            <div style="font-family:var(--font-mono); font-size:1.1rem; color:var(--red-alert);">+94 11 639 0911</div>
+          </div>
+
+          <!-- Office locations -->
+          <div class="card">
+            <div class="section-label mb-4">Global Offices</div>
+            <div class="space-y-4">
+              <div class="flex gap-3" style="font-size:0.8rem;">
+                <span style="color:var(--cyan); flex-shrink:0;">🇺🇸</span>
+                <div>
+                  <div style="color:var(--text-primary); font-weight:600;">Colombo 03 (HQ)</div>
+                  <div style="color:var(--text-muted);">No. 42, Galle Road, Colombo 03</div>
+                </div>
+              </div>
+              <div class="flex gap-3" style="font-size:0.8rem;">
+                <span style="color:var(--cyan); flex-shrink:0;">🇬🇧</span>
+                <div>
+                  <div style="color:var(--text-primary); font-weight:600;">Kandy</div>
+                  <div style="color:var(--text-muted);">No. 18, Dalada Veediya, Kandy</div>
+                </div>
+              </div>
+              <div class="flex gap-3" style="font-size:0.8rem;">
+                <span style="color:var(--cyan); flex-shrink:0;">🇸🇬</span>
+                <div>
+                  <div style="color:var(--text-primary); font-weight:600;">Galle</div>
+                  <div style="color:var(--text-muted);">No. 07, Lighthouse Street, Galle Fort</div>
+                </div>
+              </div>
+              <div class="flex gap-3" style="font-size:0.8rem;">
+                <span style="color:var(--cyan); flex-shrink:0;">🇧🇷</span>
+                <div>
+                  <div style="color:var(--text-primary); font-weight:600;">Jaffna</div>
+                  <div style="color:var(--text-muted);">No. 25, Hospital Road, Jaffna</div>
+                </div>
+              </div>
+            </div>
+            <p style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-muted); margin-top:16px;">All locations are fictional and for demonstration only.</p>
+          </div>
+
+          <!-- Email & Social -->
+          <div class="card">
+            <div class="section-label mb-4">Direct Contact</div>
+            <div class="space-y-3" style="font-size:0.8rem; color:var(--text-secondary);">
+              <div><span style="color:var(--text-muted); font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.1em;">GENERAL</span><br><a href="mailto:hello@nexusshield.lk" style="color:var(--cyan); text-decoration:none;">hello@nexusshield.lk</a></div>
+              <div><span style="color:var(--text-muted); font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.1em;">SALES</span><br><a href="mailto:sales@nexusshield.lk" style="color:var(--cyan); text-decoration:none;">sales@nexusshield.lk</a></div>
+              <div><span style="color:var(--text-muted); font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.1em;">PRESS</span><br><a href="mailto:press@nexusshield.lk" style="color:var(--cyan); text-decoration:none;">press@nexusshield.lk</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="mt-20">
+        <div class="text-center mb-12">
+          <div class="section-label" style="justify-content:center;">FAQ</div>
+          <h2 class="section-heading text-center">Common <span class="accent">Questions</span></h2>
+        </div>
+        <div class="max-w-3xl mx-auto">
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>How quickly can NexusShield be deployed?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">For SOC as a Service and AI monitoring, we can be live within 72 hours of signing. Full Zero-Trust architecture deployments typically take 2–4 weeks depending on network complexity. We provide white-glove onboarding with a dedicated deployment engineer.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Do you offer services for small businesses?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">Yes. Our Starter tier is designed for organizations with 10–200 employees and starts at $2,400/month. We believe every business deserves enterprise-grade protection regardless of size. We also offer annual billing at a 15% discount.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>What happens if we experience a breach?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">All plans include Incident Response retainer hours. Our on-call team activates within 12 minutes of confirmed breach. We handle containment, forensics, notification requirements, and remediation. Enterprise plans include on-site response from our nearest SOC center.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Is our data kept private and secure?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">Absolutely. NexusShield processes your telemetry data solely for threat detection purposes. We never sell, share, or monetize client data. All data is encrypted at rest (AES-256) and in transit (TLS 1.3). We are SOC 2 Type II and ISO 27001 certified.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Do you support compliance with GDPR, HIPAA, PCI-DSS?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">Yes. Our compliance team can assist with GDPR, HIPAA, PCI-DSS, SOC 2, and ISO 27001 requirements. Professional and Enterprise tiers include monthly compliance reports and access to our dedicated compliance advisory team.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo"><div class="logo-mark"><svg viewBox="0 0 36 36" fill="none"><path d="M18 2L4 8v10c0 8.284 6.048 15.396 14 17 7.952-1.604 14-8.716 14-17V8L18 2z" stroke="#00ffc8" stroke-width="1.5" fill="none"/><circle cx="18" cy="17" r="4" fill="rgba(0,255,200,0.15)" stroke="#00ffc8" stroke-width="1"/><path d="M14 17l3 3 5-6" stroke="#00ffc8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="logo-text">Nexus<span>Shield</span></span></a>
+          <p>All entities depicted are fictional. Created for competition purposes.</p>
+        </div>
+        <div class="footer-col"><h4>Pages</h4><ul><li><a href="../index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="threat-intel.html">Threat Intel</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Company</h4><ul><li><a href="sitemap.html">Sitemap</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:hello@nexusshield.lk">hello@nexusshield.lk</a></li><li><a href="#">+94 11 639 8742</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 NexusShield Inc. — Fictional.</span><span style="color:var(--cyan);">Status: SECURE</span></div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    /* ── Contact Page Scripts ── */
+
+    // FAQ accordion
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    // Form submission
+    const form = document.getElementById('contact-form');
+    const successEl = document.getElementById('form-success');
+    const errorEl = document.getElementById('form-error');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      errorEl.style.display = 'none';
+
+      // Basic validation
+      const fname = document.getElementById('fname').value.trim();
+      const lname = document.getElementById('lname').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const company = document.getElementById('company').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!fname || !lname || !email || !company || !message) {
+        errorEl.textContent = '[ ERROR ] Please fill in all required fields.';
+        errorEl.style.display = 'block';
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        errorEl.textContent = '[ ERROR ] Please enter a valid email address.';
+        errorEl.style.display = 'block';
+        return;
+      }
+
+      // Simulate submission
+      form.style.display = 'none';
+      successEl.style.display = 'block';
+    });
+  </script>
+</body>
+</html>

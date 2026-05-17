@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  NEXUS SHIELD — Cyber Defense Solutions                  ║
+  ║  Page: Services (services.html)                          ║
+  ║  Description: Full service catalog with interactive      ║
+  ║               cards, pricing tiers, and service details. ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — NexusShield</title>
+  <meta name="description" content="Explore NexusShield's full range of cybersecurity services: AI detection, Zero Trust, SOC, penetration testing, and cloud security.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { 'void':'#030508','deep':'#070c12','card':'#0b1220','cyan':'#00ffc8','alert':'#ff2d55','amber':'#ffb700' },
+          fontFamily: { display:['Syne','sans-serif'], mono:['JetBrains Mono','monospace'], serif:['Crimson Pro','serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    /* Services page specific styles */
+    .service-tab {  transition: all 0.3s ease; }
+    .service-tab.active { background: rgba(0,255,200,0.1); border-color: var(--cyan); color: var(--cyan); }
+    .price-card { position: relative; overflow: hidden; }
+    .price-card.featured::before {
+      content: 'RECOMMENDED';
+      position: absolute;
+      top: 16px; right: -28px;
+      background: var(--cyan);
+      color: var(--bg-void);
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      padding: 4px 36px;
+      transform: rotate(45deg);
+      font-family: var(--font-mono);
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body class="bg-void">
+
+
+  <!-- Navigation -->
+  <nav>
+    <a href="../index.html" class="logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 36 36" fill="none">
+          <path d="M18 2L4 8v10c0 8.284 6.048 15.396 14 17 7.952-1.604 14-8.716 14-17V8L18 2z" stroke="#00ffc8" stroke-width="1.5" fill="none"/>
+          <circle cx="18" cy="17" r="4" fill="rgba(0,255,200,0.15)" stroke="#00ffc8" stroke-width="1"/>
+          <path d="M14 17l3 3 5-6" stroke="#00ffc8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="logo-text">Nexus<span>Shield</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="threat-intel.html">Threat Intel</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="sitemap.html">Sitemap</a></li>
+    </ul>
+    <a href="contact.html" class="btn-cta">Get Protected</a>
+    <button class="menu-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="relative pt-40 pb-20 overflow-hidden">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0,255,200,0.06) 0%, transparent 60%);"></div>
+    <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(0,255,200,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,200,0.025) 1px, transparent 1px); background-size: 64px 64px;"></div>
+    <div class="container text-center relative z-10">
+      <div class="section-label" style="justify-content:center;">Service Catalog</div>
+      <h1 class="font-display font-extrabold leading-none mb-6" style="font-size: clamp(2.5rem,6vw,4.5rem); color: var(--text-primary);">
+        Everything You Need to<br><span style="color: var(--cyan);">Stay Unbreachable</span>
+      </h1>
+      <p class="section-sub mx-auto text-center" style="max-width: 580px; text-align: center;">
+        From preventive architecture to active threat hunting — our 12 specialized services cover every attack vector your organization faces.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Detail Grid -->
+  <section class="pb-24" id="services-grid">
+    <div class="container">
+
+      <!-- AI Threat Detection -->
+      <div id="ai-detection" class="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-16 items-start">
+        <div class="lg:col-span-2">
+          <div class="section-label">01</div>
+          <h2 class="section-heading">AI Threat <span class="accent">Detection</span></h2>
+          <p class="section-sub mb-6">NexusAI v7 processes over 4 trillion behavioral signals daily, building unique fingerprints for every user and device on your network.</p>
+          <ul class="space-y-3" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary);">
+            <li class="flex gap-3"><span style="color: var(--cyan);">→</span> Behavioral anomaly detection</li>
+            <li class="flex gap-3"><span style="color: var(--cyan);">→</span> Zero-day exploit identification</li>
+            <li class="flex gap-3"><span style="color: var(--cyan);">→</span> Lateral movement tracking</li>
+            <li class="flex gap-3"><span style="color: var(--cyan);">→</span> Insider threat modeling</li>
+            <li class="flex gap-3"><span style="color: var(--cyan);">→</span> Automated kill-chain termination</li>
+          </ul>
+        </div>
+        <div class="lg:col-span-3 terminal scan-container">
+          <div class="terminal-bar">
+            <div class="terminal-dot red"></div><div class="terminal-dot amber"></div><div class="terminal-dot green"></div>
+            <span class="terminal-title">nexus-ai — behavioral engine</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="t-prompt">ai@nexus</span>:~$ <span class="t-cmd">analyze --target user-session-48291</span></p>
+            <p class="mt-2"><span class="t-ok">[MODEL v7.3.1]</span> Baseline profile loaded</p>
+            <p><span class="t-warn">[ALERT]</span> Login at 03:14 UTC — deviation: <span class="t-warn">+840%</span> from mean</p>
+            <p><span class="t-warn">[ALERT]</span> File access rate: <span class="t-warn">2,400/min</span> vs baseline 12/min</p>
+            <p><span class="t-err">[THREAT]</span> Confidence: <span class="t-err">98.4% — Credential Stuffing + Exfil</span></p>
+            <p class="mt-2"><span class="t-ok">[ACTION]</span> Session terminated. Account quarantined.</p>
+            <p><span class="t-ok">[ACTION]</span> Incident #IR-20240847 opened.</p>
+            <p><span class="t-ok">[NOTIFY]</span> SOC analyst paged. ETA: 4 min.</p>
+            <p class="mt-2"><span class="t-prompt">ai@nexus</span>:~$ <span class="cursor-blink"></span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="h-line"></div>
+
+      <!-- Zero Trust -->
+      <div id="zero-trust" class="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-16 items-start">
+        <div class="lg:col-span-3 grid grid-cols-2 gap-4">
+          <div class="card fade-up">
+            <div style="font-size: 1.5rem; margin-bottom: 12px;">🔑</div>
+            <h4 class="font-display font-semibold mb-2" style="color: var(--text-primary);">Identity Verification</h4>
+            <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.7;">Continuous MFA with biometric and device posture checks. No user is ever implicitly trusted.</p>
+          </div>
+          <div class="card fade-up">
+            <div style="font-size: 1.5rem; margin-bottom: 12px;">🔗</div>
+            <h4 class="font-display font-semibold mb-2" style="color: var(--text-primary);">Micro-Segmentation</h4>
+            <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.7;">Network partitioned into isolated zones. Lateral movement becomes mathematically impossible.</p>
+          </div>
+          <div class="card fade-up">
+            <div style="font-size: 1.5rem; margin-bottom: 12px;">📋</div>
+            <h4 class="font-display font-semibold mb-2" style="color: var(--text-primary);">Least Privilege Access</h4>
+            <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.7;">Just-in-time access grants, auto-expiring sessions, and role-based policy enforcement.</p>
+          </div>
+          <div class="card fade-up">
+            <div style="font-size: 1.5rem; margin-bottom: 12px;">📊</div>
+            <h4 class="font-display font-semibold mb-2" style="color: var(--text-primary);">Continuous Validation</h4>
+            <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.7;">Every packet, every session, every request — validated in real-time against dynamic policy.</p>
+          </div>
+        </div>
+        <div class="lg:col-span-2">
+          <div class="section-label">02</div>
+          <h2 class="section-heading">Zero-Trust <span class="accent">Architecture</span></h2>
+          <p class="section-sub mb-6">We design and deploy full Zero Trust frameworks that treat every user, device, and request as untrusted by default — regardless of network location.</p>
+          <div class="mt-6 p-4 rounded" style="background: var(--bg-card); border: 1px solid var(--border-dim); font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-secondary);">
+            <div style="color: var(--cyan); margin-bottom: 8px; font-size: 0.65rem; letter-spacing: 0.1em;">ZERO TRUST SCORE</div>
+            <div class="flex justify-between mb-2"><span>Identity</span><span style="color: var(--cyan);">98/100</span></div>
+            <div class="h-1 rounded mb-3" style="background: var(--bg-deep);">
+              <div class="h-1 rounded" style="background: var(--cyan); width: 98%;"></div>
+            </div>
+            <div class="flex justify-between mb-2"><span>Device Trust</span><span style="color: var(--cyan);">94/100</span></div>
+            <div class="h-1 rounded mb-3" style="background: var(--bg-deep);">
+              <div class="h-1 rounded" style="background: var(--cyan); width: 94%;"></div>
+            </div>
+            <div class="flex justify-between mb-2"><span>Network</span><span style="color: var(--amber);">87/100</span></div>
+            <div class="h-1 rounded mb-3" style="background: var(--bg-deep);">
+              <div class="h-1 rounded" style="background: var(--amber); width: 87%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="h-line"></div>
+
+      <!-- SOC / Pentest / Cloud row -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div id="soc" class="card fade-up">
+          <div class="section-label mb-4">03</div>
+          <h3 class="font-display font-bold text-xl mb-3" style="color: var(--text-primary);">SOC as a Service</h3>
+          <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px;">24/7 human + AI triage, alert correlation, and incident response from certified analysts across 6 global centers.</p>
+          <ul class="space-y-2" style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-secondary);">
+            <li><span style="color:var(--cyan);">✓</span> SIEM management</li>
+            <li><span style="color:var(--cyan);">✓</span> Threat hunting</li>
+            <li><span style="color:var(--cyan);">✓</span> Playbook automation</li>
+            <li><span style="color:var(--cyan);">✓</span> Monthly reports</li>
+          </ul>
+        </div>
+        <div id="pentest" class="card fade-up">
+          <div class="section-label mb-4">04</div>
+          <h3 class="font-display font-bold text-xl mb-3" style="color: var(--text-primary);">Penetration Testing</h3>
+          <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px;">CREST-certified red team exercises targeting web, network, cloud, and physical infrastructure with full remediation guidance.</p>
+          <ul class="space-y-2" style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-secondary);">
+            <li><span style="color:var(--cyan);">✓</span> Black / Grey / White box</li>
+            <li><span style="color:var(--cyan);">✓</span> Social engineering</li>
+            <li><span style="color:var(--cyan);">✓</span> API security testing</li>
+            <li><span style="color:var(--cyan);">✓</span> Executive summary</li>
+          </ul>
+        </div>
+        <div id="cloud" class="card fade-up">
+          <div class="section-label mb-4">05</div>
+          <h3 class="font-display font-bold text-xl mb-3" style="color: var(--text-primary);">Cloud Security</h3>
+          <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px;">CSPM, CWPP, and CIEM across AWS, Azure, and GCP. Runtime protection with auto-remediation and compliance dashboards.</p>
+          <ul class="space-y-2" style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-secondary);">
+            <li><span style="color:var(--cyan);">✓</span> Misconfiguration detection</li>
+            <li><span style="color:var(--cyan);">✓</span> Container runtime security</li>
+            <li><span style="color:var(--cyan);">✓</span> IAM monitoring</li>
+            <li><span style="color:var(--cyan);">✓</span> SOC 2 / ISO 27001 assist</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-24" style="background: var(--bg-deep);">
+    <div class="container">
+      <div class="text-center mb-16">
+        <div class="section-label" style="justify-content:center;">Pricing</div>
+        <h2 class="section-heading text-center">Transparent. <span class="accent">Scalable.</span></h2>
+        <p class="section-sub mx-auto text-center" style="max-width:480px;">Pick a tier that matches your risk profile. All plans include 24/7 SOC monitoring.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <!-- Tier 1 -->
+        <div class="price-card card fade-up">
+          <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing:0.2em; color: var(--text-muted); margin-bottom:16px;">STARTER</div>
+          <div class="stat-value mb-1">$2,400</div>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom: 24px;">/month</div>
+          <ul class="space-y-3 mb-8" style="font-size:0.78rem; color:var(--text-secondary);">
+            <li><span style="color:var(--cyan);">✓</span> AI monitoring up to 500 endpoints</li>
+            <li><span style="color:var(--cyan);">✓</span> Basic SIEM integration</li>
+            <li><span style="color:var(--cyan);">✓</span> 8×5 analyst support</li>
+            <li><span style="color:var(--cyan);">✓</span> Monthly threat report</li>
+            <li style="color:var(--text-muted);">✗ Penetration testing</li>
+            <li style="color:var(--text-muted);">✗ Cloud CSPM</li>
+          </ul>
+          <a href="contact.html" class="btn-cta block text-center">Get Started</a>
+        </div>
+        <!-- Tier 2: Featured -->
+        <div class="price-card card featured fade-up" style="border-color: var(--cyan); transform: scale(1.04);">
+          <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing:0.2em; color: var(--cyan); margin-bottom:16px;">PROFESSIONAL</div>
+          <div class="stat-value mb-1">$7,800</div>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom: 24px;">/month</div>
+          <ul class="space-y-3 mb-8" style="font-size:0.78rem; color:var(--text-secondary);">
+            <li><span style="color:var(--cyan);">✓</span> AI monitoring unlimited endpoints</li>
+            <li><span style="color:var(--cyan);">✓</span> Full SIEM + SOAR</li>
+            <li><span style="color:var(--cyan);">✓</span> 24/7 SOC coverage</li>
+            <li><span style="color:var(--cyan);">✓</span> Quarterly pen test</li>
+            <li><span style="color:var(--cyan);">✓</span> Cloud CSPM (2 providers)</li>
+            <li><span style="color:var(--cyan);">✓</span> Weekly executive briefings</li>
+          </ul>
+          <a href="contact.html" class="btn-cta block text-center">Get Started</a>
+        </div>
+        <!-- Tier 3 -->
+        <div class="price-card card fade-up">
+          <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing:0.2em; color: var(--text-muted); margin-bottom:16px;">ENTERPRISE</div>
+          <div class="stat-value mb-1">Custom</div>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom: 24px;">contact sales</div>
+          <ul class="space-y-3 mb-8" style="font-size:0.78rem; color:var(--text-secondary);">
+            <li><span style="color:var(--cyan);">✓</span> Everything in Professional</li>
+            <li><span style="color:var(--cyan);">✓</span> Dedicated CISO advisor</li>
+            <li><span style="color:var(--cyan);">✓</span> Monthly red team exercises</li>
+            <li><span style="color:var(--cyan);">✓</span> All 3 cloud providers</li>
+            <li><span style="color:var(--cyan);">✓</span> On-site incident response</li>
+            <li><span style="color:var(--cyan);">✓</span> Compliance reporting (SOC2/ISO)</li>
+          </ul>
+          <a href="contact.html" class="btn-cta block text-center">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <div class="logo-mark">
+              <svg viewBox="0 0 36 36" fill="none"><path d="M18 2L4 8v10c0 8.284 6.048 15.396 14 17 7.952-1.604 14-8.716 14-17V8L18 2z" stroke="#00ffc8" stroke-width="1.5" fill="none"/><circle cx="18" cy="17" r="4" fill="rgba(0,255,200,0.15)" stroke="#00ffc8" stroke-width="1"/><path d="M14 17l3 3 5-6" stroke="#00ffc8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="logo-text">Nexus<span>Shield</span></span>
+          </a>
+          <p>Protecting the digital frontier since 2018. All entities depicted are fictional.</p>
+        </div>
+        <div class="footer-col"><h4>Services</h4><ul><li><a href="#ai-detection">AI Detection</a></li><li><a href="#zero-trust">Zero Trust</a></li><li><a href="#soc">SOC</a></li><li><a href="#pentest">Pen Testing</a></li><li><a href="#cloud">Cloud Security</a></li></ul></div>
+        <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="threat-intel.html">Threat Intel</a></li><li><a href="contact.html">Contact</a></li><li><a href="login.html">Login</a></li><li><a href="sitemap.html">Sitemap</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:defense@nexusshield.lk">defense@nexusshield.lk</a></li><li><a href="#">+94 11 639 8742</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 NexusShield Inc. — Fictional Company.</span>
+        <span style="color: var(--cyan);">Status: SECURE</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

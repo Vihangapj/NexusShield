@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - NexusShield</title>
+  <meta name="description" content="Dummy client portal login for the NexusShield cybersecurity website.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { 'void':'#030508','deep':'#070c12','card':'#0b1220','cyan':'#00ffc8','alert':'#ff2d55','amber':'#ffb700' },
+          fontFamily: { display:['Syne','sans-serif'], mono:['JetBrains Mono','monospace'], serif:['Crimson Pro','serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    .login-shell {
+      min-height: calc(100vh - var(--nav-h));
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 440px);
+      gap: 64px;
+      align-items: center;
+    }
+    .login-input {
+      width: 100%;
+      background: var(--bg-deep);
+      border: 1px solid var(--border-dim);
+      border-radius: var(--radius);
+      padding: 13px 15px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .login-input:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 2px rgba(0,255,200,0.1);
+    }
+    .login-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .login-status {
+      display: none;
+      margin-top: 18px;
+      padding: 14px;
+      border: 1px solid var(--border-glow);
+      background: rgba(0,255,200,0.07);
+      color: var(--cyan);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      line-height: 1.7;
+    }
+    @media (max-width: 900px) {
+      .login-shell { grid-template-columns: 1fr; gap: 36px; padding-bottom: 64px; }
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body class="bg-void">
+
+
+  <nav>
+    <a href="../index.html" class="logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 36 36" fill="none">
+          <path d="M18 2L4 8v10c0 8.284 6.048 15.396 14 17 7.952-1.604 14-8.716 14-17V8L18 2z" stroke="#00ffc8" stroke-width="1.5" fill="none"/>
+          <circle cx="18" cy="17" r="4" fill="rgba(0,255,200,0.15)" stroke="#00ffc8" stroke-width="1"/>
+          <path d="M14 17l3 3 5-6" stroke="#00ffc8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="logo-text">Nexus<span>Shield</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="threat-intel.html">Threat Intel</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html" class="active">Login</a></li>
+      <li><a href="sitemap.html">Sitemap</a></li>
+    </ul>
+    <a href="contact.html" class="btn-cta">Get Protected</a>
+    <button class="menu-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </nav>
+
+  <main class="pt-28">
+    <section class="container login-shell">
+      <div>
+        <div class="section-label">Client Portal</div>
+        <h1 class="font-display font-extrabold leading-none mb-6" style="font-size: clamp(2.6rem,6vw,4.5rem); color: var(--text-primary);">
+          Secure Access<br><span style="color: var(--cyan);">Demo Login</span>
+        </h1>
+        <p style="font-family:var(--font-serif); font-size:1.1rem; color:var(--text-secondary); line-height:1.9; font-style:italic; max-width:560px;">
+          This is a dummy login screen for the competition website. It simulates a client portal for Sri Lankan organizations without connecting to a real backend.
+        </p>
+
+        <div class="terminal mt-10 max-w-xl">
+          <div class="terminal-bar">
+            <div class="terminal-dot red"></div><div class="terminal-dot amber"></div><div class="terminal-dot green"></div>
+            <span class="terminal-title">portal-access-policy</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="t-ok">[DEMO]</span> Username: demo@nexusshield.lk</p>
+            <p><span class="t-ok">[DEMO]</span> Password: any value accepted</p>
+            <p><span class="t-warn">[NOTE]</span> No credentials are transmitted or stored.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="border-color:var(--border-glow);">
+        <div class="section-label mb-6">Sign In</div>
+        <form id="login-form" novalidate>
+          <div class="mb-5">
+            <label class="login-label" for="login-email">Email</label>
+            <input class="login-input" id="login-email" name="email" type="email" placeholder="demo@nexusshield.lk" autocomplete="email" required>
+          </div>
+          <div class="mb-5">
+            <label class="login-label" for="login-password">Password</label>
+            <input class="login-input" id="login-password" name="password" type="password" placeholder="Enter any password" autocomplete="current-password" required>
+          </div>
+          <div class="mb-6 flex items-center justify-between gap-4" style="font-size:0.72rem; color:var(--text-secondary);">
+            <label class="flex items-center gap-2" style="cursor:pointer;">
+              <input type="checkbox" style="accent-color:var(--cyan);"> Remember device
+            </label>
+            <a href="#" style="color:var(--cyan); text-decoration:none;">Forgot?</a>
+          </div>
+          <button type="submit" class="btn-cta w-full text-center" style="display:block; clip-path:none; border-radius:4px; padding:15px;">Login to Portal</button>
+          <div id="login-status" class="login-status" role="status"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/main.js"></script>
+  <script>
+    const loginForm = document.getElementById('login-form');
+    const loginStatus = document.getElementById('login-status');
+    loginForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value.trim();
+      const password = document.getElementById('login-password').value.trim();
+      if (!email || !password) {
+        loginStatus.style.display = 'block';
+        loginStatus.style.borderColor = 'rgba(255,45,85,0.4)';
+        loginStatus.style.background = 'rgba(255,45,85,0.08)';
+        loginStatus.style.color = 'var(--red-alert)';
+        loginStatus.textContent = '[ DEMO ERROR ] Enter an email and password to continue.';
+        return;
+      }
+      loginStatus.style.display = 'block';
+      loginStatus.style.borderColor = 'var(--border-glow)';
+      loginStatus.style.background = 'rgba(0,255,200,0.07)';
+      loginStatus.style.color = 'var(--cyan)';
+      loginStatus.textContent = '[ ACCESS GRANTED ] Dummy session created for ' + email + '. No real login happened.';
+    });
+  </script>
+</body>
+</html>

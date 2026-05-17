@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sitemap - NexusShield</title>
+  <meta name="description" content="Sitemap for the NexusShield cybersecurity website.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { 'void':'#030508','deep':'#070c12','card':'#0b1220','cyan':'#00ffc8','alert':'#ff2d55','amber':'#ffb700' },
+          fontFamily: { display:['Syne','sans-serif'], mono:['JetBrains Mono','monospace'], serif:['Crimson Pro','serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    .sitemap-list a {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border-dim);
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color var(--transition), padding-left var(--transition);
+    }
+    .sitemap-list a:hover {
+      color: var(--cyan);
+      padding-left: 8px;
+    }
+    .sitemap-list span {
+      color: var(--text-muted);
+      font-size: 0.72rem;
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body class="bg-void">
+
+
+  <nav>
+    <a href="../index.html" class="logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 36 36" fill="none">
+          <path d="M18 2L4 8v10c0 8.284 6.048 15.396 14 17 7.952-1.604 14-8.716 14-17V8L18 2z" stroke="#00ffc8" stroke-width="1.5" fill="none"/>
+          <circle cx="18" cy="17" r="4" fill="rgba(0,255,200,0.15)" stroke="#00ffc8" stroke-width="1"/>
+          <path d="M14 17l3 3 5-6" stroke="#00ffc8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="logo-text">Nexus<span>Shield</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="threat-intel.html">Threat Intel</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="sitemap.html" class="active">Sitemap</a></li>
+    </ul>
+    <a href="contact.html" class="btn-cta">Get Protected</a>
+    <button class="menu-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </nav>
+
+  <main>
+    <section class="relative pt-40 pb-20 overflow-hidden">
+      <div class="absolute inset-0" style="background: radial-gradient(ellipse 70% 50% at 50% 20%, rgba(0,255,200,0.05) 0%, transparent 60%);"></div>
+      <div class="container relative z-10">
+        <div class="section-label">Site Index</div>
+        <h1 class="font-display font-extrabold leading-none mb-6" style="font-size: clamp(2.5rem,6vw,4rem); color: var(--text-primary);">
+          NexusShield<br><span style="color: var(--cyan);">Sitemap</span>
+        </h1>
+        <p class="section-sub">Quick access to every public page in this competition website.</p>
+      </div>
+    </section>
+
+    <section class="pb-24">
+      <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="card lg:col-span-2">
+            <div class="section-label mb-4">Pages</div>
+            <div class="sitemap-list">
+              <a href="../index.html"><strong>Home</strong><span>Hero, services overview, mission, demo preview</span></a>
+              <a href="services.html"><strong>Services</strong><span>Service catalog, details, pricing tiers</span></a>
+              <a href="about.html"><strong>About</strong><span>Company story, values, timeline, leadership</span></a>
+              <a href="threat-intel.html"><strong>Threat Intel</strong><span>Threat dashboard, map, CVE tracker</span></a>
+              <a href="contact.html"><strong>Contact</strong><span>Inquiry form, offices, FAQ</span></a>
+              <a href="login.html"><strong>Login</strong><span>Dummy client portal sign-in mockup</span></a>
+            </div>
+          </div>
+
+          <aside class="card">
+            <div class="section-label mb-4">Service Anchors</div>
+            <ul class="space-y-3" style="font-size:0.8rem; color:var(--text-secondary);">
+              <li><a href="services.html#ai-detection" style="color:var(--cyan); text-decoration:none;">AI Threat Detection</a></li>
+              <li><a href="services.html#zero-trust" style="color:var(--cyan); text-decoration:none;">Zero-Trust Architecture</a></li>
+              <li><a href="services.html#soc" style="color:var(--cyan); text-decoration:none;">SOC as a Service</a></li>
+              <li><a href="services.html#pentest" style="color:var(--cyan); text-decoration:none;">Penetration Testing</a></li>
+              <li><a href="services.html#cloud" style="color:var(--cyan); text-decoration:none;">Cloud Security</a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo"><div class="logo-mark"><svg viewBox="0 0 36 36" fill="none"><path d="M18 2L4 8v10c0 8.284 6.048 15.396 14 17 7.952-1.604 14-8.716 14-17V8L18 2z" stroke="#00ffc8" stroke-width="1.5" fill="none"/><circle cx="18" cy="17" r="4" fill="rgba(0,255,200,0.15)" stroke="#00ffc8" stroke-width="1"/><path d="M14 17l3 3 5-6" stroke="#00ffc8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="logo-text">Nexus<span>Shield</span></span></a>
+          <p>All entities depicted are fictional. Created for competition purposes.</p>
+        </div>
+        <div class="footer-col"><h4>Pages</h4><ul><li><a href="../index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="threat-intel.html">Threat Intel</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#ai-detection">AI Detection</a></li><li><a href="services.html#zero-trust">Zero Trust</a></li><li><a href="services.html#soc">SOC</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:defense@nexusshield.lk">defense@nexusshield.lk</a></li><li><a href="contact.html">Secure Inquiry</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>Copyright 2024 NexusShield Inc. - Fictional.</span><span style="color:var(--cyan);">Status: SECURE</span></div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
