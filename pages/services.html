@@ -44,6 +44,9 @@
       transform: rotate(45deg);
       font-family: var(--font-mono);
     }
+    @media (min-width: 768px) {
+      .price-card.featured { transform: scale(1.04); }
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 </head>
@@ -83,7 +86,7 @@
     <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(0,255,200,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,200,0.025) 1px, transparent 1px); background-size: 64px 64px;"></div>
     <div class="container text-center relative z-10">
       <div class="section-label" style="justify-content:center;">Service Catalog</div>
-      <h1 class="font-display font-extrabold leading-none mb-6" style="font-size: clamp(2.5rem,6vw,4.5rem); color: var(--text-primary);">
+      <h1 class="font-display font-extrabold leading-none mb-6" style="font-size: clamp(1.8rem, 8vw, 4.5rem); color: var(--text-primary);">
         Everything You Need to<br><span style="color: var(--cyan);">Stay Unbreachable</span>
       </h1>
       <p class="section-sub mx-auto text-center" style="max-width: 580px; text-align: center;">
@@ -220,7 +223,7 @@
   </section>
 
   <!-- Pricing -->
-  <section class="py-24" style="background: var(--bg-deep);">
+  <section class="py-16 lg:py-24" style="background: var(--bg-deep);">
     <div class="container">
       <div class="text-center mb-16">
         <div class="section-label" style="justify-content:center;">Pricing</div>
@@ -244,7 +247,7 @@
           <a href="contact.html" class="btn-cta block text-center">Get Started</a>
         </div>
         <!-- Tier 2: Featured -->
-        <div class="price-card card featured fade-up" style="border-color: var(--cyan); transform: scale(1.04);">
+        <div class="price-card card featured fade-up" style="border-color: var(--cyan);">
           <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing:0.2em; color: var(--cyan); margin-bottom:16px;">PROFESSIONAL</div>
           <div class="stat-value mb-1">$7,800</div>
           <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom: 24px;">/month</div>

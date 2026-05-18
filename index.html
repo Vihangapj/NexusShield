@@ -104,7 +104,7 @@
     <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(0,255,200,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,200,0.03) 1px, transparent 1px); background-size: 64px 64px;"></div>
 
     <div class="container relative z-10" style="padding-top: 80px; padding-bottom: 80px;">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
         <!-- Left: Hero Copy -->
         <div>
@@ -115,10 +115,11 @@
             <span id="threat-ticker" class="text-text-secondary" style="color: var(--text-secondary); transition: opacity 0.4s;"></span>
           </div>
 
-          <!-- Main Heading -->
-          <h1 class="font-display font-extrabold leading-none mb-6 glitch" data-text="DEFEND. DETECT. DOMINATE."
-              style="font-size: clamp(2.8rem, 6vw, 5rem); color: var(--text-primary);">
-            DEFEND.<br>DETECT.<br><span style="color: var(--cyan);">DOMINATE.</span>
+          <h1 class="font-display font-extrabold leading-none mb-6 flex flex-col items-start"
+              style="font-size: clamp(2.1rem, 9vw, 5rem); color: var(--text-primary);">
+            <span class="glitch inline-block" data-text="DEFEND.">DEFEND.</span>
+            <span class="glitch inline-block" data-text="DETECT.">DETECT.</span>
+            <span class="glitch inline-block" data-text="DOMINATE." style="color: var(--cyan);">DOMINATE.</span>
           </h1>
 
           <!-- Subtext -->
@@ -198,7 +199,7 @@
   <!-- ════════════════════════════════════
        SERVICES OVERVIEW
   ════════════════════════════════════ -->
-  <section class="py-24">
+  <section class="py-16 lg:py-24">
     <div class="container">
       <div class="mb-16">
         <div class="section-label">What We Do</div>
@@ -313,7 +314,7 @@
   <!-- ════════════════════════════════════
        ONLINE IMAGE GALLERY
   ════════════════════════════════════ -->
-  <section class="py-24" style="background: var(--bg-deep); border-top: 1px solid var(--border-dim); border-bottom: 1px solid var(--border-dim);">
+  <section class="py-16 lg:py-24" style="background: var(--bg-deep); border-top: 1px solid var(--border-dim); border-bottom: 1px solid var(--border-dim);">
     <div class="container">
       <div class="mb-12">
         <div class="section-label">Operational Views</div>
@@ -341,7 +342,7 @@
   <!-- ════════════════════════════════════
        CINEMATIC BAND — Quote / Mission
   ════════════════════════════════════ -->
-  <section class="py-24 relative overflow-hidden" style="background: var(--bg-deep); border-top: 1px solid var(--border-dim); border-bottom: 1px solid var(--border-dim);">
+  <section class="py-16 lg:py-24 relative overflow-hidden" style="background: var(--bg-deep); border-top: 1px solid var(--border-dim); border-bottom: 1px solid var(--border-dim);">
     <!-- Diagonal accent -->
     <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(135deg, rgba(0,255,200,0.04) 0%, transparent 50%);"></div>
     <div class="container text-center relative z-10">
@@ -361,13 +362,13 @@
   <!-- ════════════════════════════════════
        WHY NEXUSSHIELD
   ════════════════════════════════════ -->
-  <section class="py-24">
+  <section class="py-16 lg:py-24">
     <div class="container">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <!-- Left: Visual -->
         <div class="relative">
           <!-- SVG Architecture diagram -->
-          <div class="terminal scan-container" style="min-height: 360px;">
+          <div class="terminal scan-container min-h-[240px] sm:min-h-[360px]">
             <div class="terminal-bar">
               <div class="terminal-dot red"></div>
               <div class="terminal-dot amber"></div>
@@ -450,7 +451,7 @@
   <!-- ════════════════════════════════════
        MULTIMEDIA: VIDEO EMBED
   ════════════════════════════════════ -->
-  <section class="py-24 relative" style="background: var(--bg-deep);">
+  <section class="py-16 lg:py-24 relative" style="background: var(--bg-deep);">
     <div class="container">
       <div class="mb-12 text-center">
         <div class="section-label" style="justify-content: center;">In Action</div>

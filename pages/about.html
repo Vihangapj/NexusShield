@@ -54,6 +54,13 @@
     }
     /* Team card audio trigger */
     .team-card:hover .team-role { color: var(--cyan); }
+
+    @media (max-width: 640px) {
+      .timeline::before { left: 16px; }
+      .timeline-item { padding-left: 40px; margin-bottom: 32px; }
+      .timeline-dot { left: 8px; width: 16px; height: 16px; top: 5px; }
+      .timeline-dot::after { width: 4px; height: 4px; }
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 </head>
@@ -84,10 +91,10 @@
   <section class="relative pt-40 pb-20 overflow-hidden">
     <div class="absolute inset-0" style="background: radial-gradient(ellipse 70% 50% at 20% 60%, rgba(0,255,200,0.05) 0%, transparent 60%);"></div>
     <div class="container relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <div class="section-label">Our Story</div>
-          <h1 class="font-display font-extrabold leading-none mb-6" style="font-size: clamp(2.5rem,6vw,4rem);">
+          <h1 class="font-display font-extrabold leading-none mb-6" style="font-size: clamp(1.8rem, 8vw, 4rem);">
             Born from the<br><span style="color: var(--cyan);">Intelligence World</span>
           </h1>
           <p style="font-family: var(--font-serif); font-size: 1.1rem; color: var(--text-secondary); line-height: 1.9; font-style: italic; margin-bottom: 24px;">
@@ -168,9 +175,9 @@
   </section>
 
   <!-- Timeline -->
-  <section class="py-24">
+  <section class="py-16 lg:py-24">
     <div class="container">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         <div>
           <div class="section-label">History</div>
           <h2 class="section-heading">Six Years of<br><span class="accent">Relentless Growth</span></h2>
@@ -213,7 +220,7 @@
   </section>
 
   <!-- Team -->
-  <section class="py-24" style="background: var(--bg-deep);">
+  <section class="py-16 lg:py-24" style="background: var(--bg-deep);">
     <div class="container">
       <div class="text-center mb-16">
         <div class="section-label" style="justify-content:center;">Leadership</div>
